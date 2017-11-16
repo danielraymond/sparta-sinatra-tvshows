@@ -67,7 +67,7 @@ class TVShowController < Sinatra::Base
   end
 
   post "/tv-shows" do
-    "Create a new photo"
+    "Create a new show"
   end
 
 end
