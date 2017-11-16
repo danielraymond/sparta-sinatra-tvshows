@@ -12,7 +12,7 @@ class TVShowController < Sinatra::Base
 	 id: 0,
 	 title: "TV Show 1",
 	 body: "description",
-   video: "https://www.cats.org.uk/uploads/images/featurebox_sidebar_kids/grief-and-loss.jpg",
+   video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/u_7ou27JwxM" frameborder="0" gesture="media" allowfullscreen></iframe>',
    image: "https://ibhuluimcom-a.akamaihd.net/ib.huluim.com/show/22881?region=US&size=952x536"
 },
 {
@@ -35,13 +35,13 @@ class TVShowController < Sinatra::Base
     erb :'tv_shows/home'
   end
 
-  get "/tv-shows" do
+  get "/tv_shows" do
     @title = "TV Shows"
     @shows = $tvshows
     erb :'tv_shows/index'
   end
 
-  get "/tv-shows/:id" do
+  get "/tv_shows/:id" do
     id = params[:id].to_i
     @show = $tvshows[id]
     erb :'tv_shows/show'
