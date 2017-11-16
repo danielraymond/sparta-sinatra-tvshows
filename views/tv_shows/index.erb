@@ -2,6 +2,10 @@
 <% @shows.each do |show|  %>
   <div>
     <h3><a href="/tv-shows/<%= show[:id]%>"><%= show[:title] %></a></h3>
+  </div>
+<% end %>
+<% @shows.each do |show|  %>
+  <div>
     <img src="<%= show[:image] %>" alt="Image not found">
   </div>
 <% end %>
