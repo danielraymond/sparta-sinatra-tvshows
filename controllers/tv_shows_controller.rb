@@ -41,10 +41,29 @@ class TVShowController < Sinatra::Base
     erb :'tv_shows/index'
   end
 
+  get "/tv-shows/new" do
+    @title = "New"
+    erb :'tv_shows/new'
+  end
+
   get '/tv-shows/:id' do
     id = params[:id].to_i
     @show = $tvshows[id]
     erb :'tv_shows/show'
+  end
+
+  get "/tv-shows/:id/edit" do
+    @title = "Edit"
+    erb :'tv_shows/edit'
+  end
+
+  put "/photos/:id" do
+    id = params[:id]
+    "This is the put page SHOW: #{id}"
+  end
+
+  delete "/photos/:id" do
+    "This will delete a show"
   end
 
 end
