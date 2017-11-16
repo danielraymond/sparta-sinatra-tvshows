@@ -57,13 +57,17 @@ class TVShowController < Sinatra::Base
     erb :'tv_shows/edit'
   end
 
-  put "/photos/:id" do
+  put "/tv-shows/:id" do
     id = params[:id]
     "This is the put page SHOW: #{id}"
   end
 
-  delete "/photos/:id" do
+  delete "/tv-shows/:id" do
     "This will delete a show"
+  end
+
+  post "/tv-shows" do
+    "Create a new photo"
   end
 
 end
