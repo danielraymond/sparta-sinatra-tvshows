@@ -1,8 +1,8 @@
 class TVShowController < Sinatra::Base
 
-  set :root, File.join(File.dirname(__FILE__), "..")
+  set :root, File.join(File.dirname(__FILE__), '..')
 
-  set :views, Proc.new { File.join(root, "views") }
+  set :views, Proc.new { File.join(root, 'views') }
 
   configure :development do
     register Sinatra::Reloader
@@ -10,38 +10,38 @@ class TVShowController < Sinatra::Base
 
   $tvshows = [{
 	 id: 0,
-	 title: "TV Show 1",
-	 body: "description",
+	 title: 'Rick and Morty',
+	 body: 'This is the rick and morty intro.',
    video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/u_7ou27JwxM" frameborder="0" gesture="media" allowfullscreen></iframe>',
-   image: "https://ibhuluimcom-a.akamaihd.net/ib.huluim.com/show/22881?region=US&size=952x536"
+   image: 'https://ibhuluimcom-a.akamaihd.net/ib.huluim.com/show/22881?region=US&size=952x536'
 },
 {
     id: 1,
-    title: "TV Show 2",
-    body: "description",
-    video: "https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg",
-    image: "https://ibhuluimcom-a.akamaihd.net/ib.huluim.com/show/22881?region=US&size=952x536"
+    title: 'Game of Thrones',
+    body: 'This is the game of thrones intro.',
+    video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/g62vFgt7RRo" frameborder="0" gesture="media" allowfullscreen></iframe>',
+    image: 'https://dailypost.in/wp-content/uploads/2017/07/s-5bb8b779c9194dbba3093167e84733545199b97e.jpg'
 },
 {
     id: 2,
-    title: "TV Show 3",
-    body: "description",
-    video: "http://www.littlemonsterepc.co.uk/wp-content/uploads/2015/09/Rabbit-1.jpg",
-    image: "https://ibhuluimcom-a.akamaihd.net/ib.huluim.com/show/22881?region=US&size=952x536"
+    title: 'Peep Show',
+    body: 'This is the peep show intro.',
+    video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/5lXdmTjNUfo" frameborder="0" gesture="media" allowfullscreen></iframe>',
+    image: 'http://www.drg.tv/Content/Images/Brand/peep-show-182.jpg'
 }];
 
-  get "/" do
-    @title = "Homepage"
+  get '/' do
+    @title = 'Homepage'
     erb :'tv_shows/home'
   end
 
-  get "/tv_shows" do
-    @title = "TV Shows"
+  get '/tv-shows' do
+    @title = 'TV Shows'
     @shows = $tvshows
     erb :'tv_shows/index'
   end
 
-  get "/tv_shows/:id" do
+  get '/tv-shows/:id' do
     id = params[:id].to_i
     @show = $tvshows[id]
     erb :'tv_shows/show'

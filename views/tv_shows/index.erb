@@ -1,7 +1,7 @@
 <h1>Here is a list of tv shows</h1>
 <% @shows.each do |show|  %>
   <div>
-    <h3><a href="/tv_shows/<%= show[:id]%>"><%= show[:title] %></a></h3>
+    <h3><a href="/tv-shows/<%= show[:id]%>"><%= show[:title] %></a></h3>
     <img src="<%= show[:image] %>" alt="Image not found">
   </div>
 <% end %>
