@@ -9,7 +9,8 @@ class TVShowController < Sinatra::Base
   end
 
   get "/" do
-    "Hello World"
+    @title = "Homepage"
+    erb :'tv_shows/home'
   end
 
 end
