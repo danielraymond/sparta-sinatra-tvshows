@@ -1,11 +1,7 @@
 <h1>Here is a list of tv shows</h1>
-<% @shows.each do |show|  %>
+<% @tvshows.each do |tvshow|  %>
   <div>
-    <h3><a href="/tv-shows/<%= show[:id]%>"><%= show[:title] %></a></h3>
-  </div>
-<% end %>
-<% @shows.each do |show|  %>
-  <div>
-    <img src="<%= show[:image] %>" alt="Image not found">
+    <h3><a href="/tv-shows/<%= tvshow.id%>"><%= tvshow.title %></a></h3>
+    <p><%= tvshow.body %></p>
   </div>
 <% end %>

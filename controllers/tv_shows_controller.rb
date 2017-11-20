@@ -32,17 +32,19 @@ class TVShowController < Sinatra::Base
 
   get '/' do
     @title = 'Homepage'
+
     erb :'tv_shows/home'
   end
 
   get '/tv-shows' do
     @title = 'TV Shows'
-    @shows = $tvshows
+    @tvshows = TVShow.all
     erb :'tv_shows/index'
   end
 
   get "/tv-shows/new" do
     @title = "New"
+    @tvshow = TVShow.new
     erb :'tv_shows/new'
   end
 
